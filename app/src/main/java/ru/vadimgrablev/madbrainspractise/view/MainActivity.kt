@@ -1,4 +1,4 @@
-package ru.vadimgrablev.madbrainspractise.View
+package ru.vadimgrablev.madbrainspractise.view
 
 import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
@@ -7,8 +7,8 @@ import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 import ru.vadimgrablev.madbrainspractise.*
-import ru.vadimgrablev.madbrainspractise.Model.Product
-import ru.vadimgrablev.madbrainspractise.Presenter.MainPresenter
+import ru.vadimgrablev.madbrainspractise.model.Product
+import ru.vadimgrablev.madbrainspractise.presenter.MainPresenter
 
 
 class MainActivity : MainView, MvpAppCompatActivity() {

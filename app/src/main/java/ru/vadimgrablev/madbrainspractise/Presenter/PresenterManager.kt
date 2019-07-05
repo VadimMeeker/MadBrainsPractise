@@ -1,4 +1,4 @@
-package ru.vadimgrablev.madbrainspractise.Presenter
+package ru.vadimgrablev.madbrainspractise.presenter
 
 interface PresenterManager {
 

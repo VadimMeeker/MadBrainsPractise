@@ -1,4 +1,4 @@
-package ru.vadimgrablev.madbrainspractise
+package ru.vadimgrablev.madbrainspractise.view
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -7,7 +7,8 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
-import ru.vadimgrablev.madbrainspractise.Model.Product
+import ru.vadimgrablev.madbrainspractise.R
+import ru.vadimgrablev.madbrainspractise.model.Product
 
 // элемент списка
  class ProductsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

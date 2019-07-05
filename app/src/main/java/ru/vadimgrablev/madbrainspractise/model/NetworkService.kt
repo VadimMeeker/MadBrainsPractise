@@ -1,4 +1,4 @@
-package ru.vadimgrablev.madbrainspractise.Model
+package ru.vadimgrablev.madbrainspractise.model
 
 import android.util.Log
 import com.google.gson.GsonBuilder

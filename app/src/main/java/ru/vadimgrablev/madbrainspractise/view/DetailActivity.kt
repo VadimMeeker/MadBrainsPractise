@@ -1,8 +1,9 @@
-package ru.vadimgrablev.madbrainspractise
+package ru.vadimgrablev.madbrainspractise.view
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_detail.*
+import ru.vadimgrablev.madbrainspractise.R
 
 class DetailActivity : AppCompatActivity() {
 
@@ -15,7 +16,7 @@ class DetailActivity : AppCompatActivity() {
 
     }
 
-    fun setText(){
+    private fun setText(){
 
         intent?.extras?.getString("PRODUCT_NAME_TAG").let{
             nameViewId_second.text = "Наименование: " + it

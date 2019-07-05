@@ -1,4 +1,4 @@
-package ru.vadimgrablev.madbrainspractise.Model
+package ru.vadimgrablev.madbrainspractise.model
 
 interface NetworkServiceManager {
 

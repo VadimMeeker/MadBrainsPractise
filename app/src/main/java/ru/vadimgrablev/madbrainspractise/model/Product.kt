@@ -1,4 +1,4 @@
-package ru.vadimgrablev.madbrainspractise.Model
+package ru.vadimgrablev.madbrainspractise.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
