@@ -2,11 +2,11 @@ package ru.vadimgrablev.madbrainspractise.view
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_detail.*
 import ru.vadimgrablev.madbrainspractise.R
+import kotlinx.android.synthetic.main.activity_detail.*
+
 
 class DetailActivity : AppCompatActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

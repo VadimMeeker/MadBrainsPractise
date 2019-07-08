@@ -1,7 +1,9 @@
 package ru.vadimgrablev.madbrainspractise.model
 
+import io.realm.RealmObject
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+
 
 data class Info(
 
@@ -15,7 +17,7 @@ data class Product(
 
     @SerializedName("name")
     @Expose
-    val name: String,
+    var name: String,
 
     @SerializedName("price")
     @Expose
@@ -24,5 +26,21 @@ data class Product(
     @SerializedName("count")
     @Expose
     val count: Int
-)
+){
 
+    val product = ProductDB()
+
+    init{
+        product.name = this.name
+        product.price = this.price
+        product.count = this.count
+    }
+
+}
+
+open class ProductDB : RealmObject() {
+
+    lateinit var name: String
+    lateinit var price: String
+    var count: Int = 0
+}

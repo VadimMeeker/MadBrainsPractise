@@ -2,11 +2,11 @@ package ru.vadimgrablev.madbrainspractise.view
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
+import android.content.Context
 import ru.vadimgrablev.madbrainspractise.R
 import ru.vadimgrablev.madbrainspractise.model.Product
 
@@ -57,6 +57,6 @@ class ProductAdapter(private val Products: List<Product>) : RecyclerView.Adapter
 
     // Принимает объект ViewHolder и устанавливает необходимые данные для соответствующей строки во view-компоненте
     override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) {
-        holder.bind(Products.get(position))
+        holder.bind(Products[position])
     }
 }
