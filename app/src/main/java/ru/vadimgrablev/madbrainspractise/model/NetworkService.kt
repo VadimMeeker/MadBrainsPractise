@@ -10,7 +10,6 @@ import retrofit2.Retrofit
 
 class NetworkService : NetworkServiceManager {
 
-
     var products: List<Product> = mutableListOf()
     lateinit var unit: (List<Product>) -> Unit
 

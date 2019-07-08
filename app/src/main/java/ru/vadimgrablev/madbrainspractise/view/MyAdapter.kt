@@ -57,6 +57,6 @@ class ProductAdapter(private val Products: List<Product>) : RecyclerView.Adapter
 
     // Принимает объект ViewHolder и устанавливает необходимые данные для соответствующей строки во view-компоненте
     override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) {
-        holder.bind(Products.get(position))
+        holder.bind(Products[position])
     }
 }
