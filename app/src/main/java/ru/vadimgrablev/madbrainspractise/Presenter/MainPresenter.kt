@@ -2,7 +2,6 @@ package ru.vadimgrablev.madbrainspractise.presenter
 
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
-import io.realm.Realm
 import ru.vadimgrablev.madbrainspractise.model.*
 import ru.vadimgrablev.madbrainspractise.view.MainView
 
@@ -11,7 +10,6 @@ import ru.vadimgrablev.madbrainspractise.view.MainView
 class MainPresenter : PresenterManager, MvpPresenter<MainView>() {
 
     private var networkService: NetworkServiceManager = NetworkService()
-
     private var dataBase: DataBaseManager = DataBase()
 
 
@@ -22,9 +20,6 @@ class MainPresenter : PresenterManager, MvpPresenter<MainView>() {
         }
 
         viewState.setList(dataBase.loadFromDB())
-
     }
-
-
 
 }

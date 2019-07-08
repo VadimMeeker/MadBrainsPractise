@@ -1,8 +1,9 @@
 package ru.vadimgrablev.madbrainspractise.model
 
+import io.realm.RealmObject
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import io.realm.RealmObject
+
 
 data class Info(
 

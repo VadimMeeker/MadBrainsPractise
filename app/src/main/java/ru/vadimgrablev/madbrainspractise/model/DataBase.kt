@@ -1,13 +1,8 @@
 package ru.vadimgrablev.madbrainspractise.model
 
 import io.realm.Realm
-import io.realm.RealmConfiguration
-import ru.vadimgrablev.madbrainspractise.view.MainActivity
 
 class DataBase : DataBaseManager {
-
-    private var mActivity: MainActivity = MainActivity()
-
 
     // сохранение загруэенных фактов о котах в БД
     override fun saveIntoDB(products: List<Product>) {
@@ -19,7 +14,6 @@ class DataBase : DataBaseManager {
         realm.copyToRealm(getProductDB(products))
         realm.commitTransaction()
     }
-
 
     // чтение из БД
     override fun loadFromDB():List<Product>{

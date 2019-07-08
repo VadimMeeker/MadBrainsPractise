@@ -1,6 +1,7 @@
 package ru.vadimgrablev.madbrainspractise.view
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import com.arellomobile.mvp.MvpAppCompatActivity
@@ -9,7 +10,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import ru.vadimgrablev.madbrainspractise.*
 import ru.vadimgrablev.madbrainspractise.model.Product
 import ru.vadimgrablev.madbrainspractise.presenter.MainPresenter
-import android.os.Parcelable
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
@@ -62,7 +62,7 @@ class MainActivity : MainView, MvpAppCompatActivity() {
     }
 
     // функция инициализации Realm
-    override fun initRealm(){
+    private fun initRealm(){
         Realm.init(this)
         val config: RealmConfiguration = RealmConfiguration.Builder()
             // при изменении конфигурации, БД будет пересоздаваться

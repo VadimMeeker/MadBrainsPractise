@@ -1,12 +1,13 @@
 package ru.vadimgrablev.madbrainspractise.model
 
-import android.util.Log
-import com.google.gson.GsonBuilder
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
+import android.util.Log
+import com.google.gson.GsonBuilder
+
 
 class NetworkService : NetworkServiceManager {
 
@@ -21,8 +22,7 @@ class NetworkService : NetworkServiceManager {
             .build()
 
         // Указываем какой интерфейс используется для построения API
-        val api: ProductApi = retrofit.create(ProductApi::class.java)
-        return api
+        return retrofit.create(ProductApi::class.java)
     }
 
     // Парсинг JSON  в List Products

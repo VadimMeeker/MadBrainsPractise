@@ -1,11 +1,9 @@
 package ru.vadimgrablev.madbrainspractise.view
 
-import com.arellomobile.mvp.MvpView
 import ru.vadimgrablev.madbrainspractise.model.Product
+import com.arellomobile.mvp.MvpView
 
 interface MainView : MvpView {
-
-    fun initRealm()
 
     fun setList(products: List<Product>)
 
