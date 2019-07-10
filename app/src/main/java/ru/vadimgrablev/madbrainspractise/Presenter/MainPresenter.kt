@@ -1,5 +1,7 @@
 package ru.vadimgrablev.madbrainspractise.presenter
 
+
+import android.os.Handler
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import ru.vadimgrablev.madbrainspractise.model.*
@@ -15,15 +17,13 @@ class MainPresenter : PresenterManager, MvpPresenter<MainView>() {
 
     override fun onCreate() {
 
-
         dataBase.loadFromDB().ifEmpty {
             networkService.sendRequestProductsToServer { dataBase.saveIntoDB(it) }
 
-            viewState.setList(dataBase.loadFromDB())
+            Handler().postDelayed({ viewState.setList(dataBase.loadFromDB()) }, 1000)
         }
 
         viewState.setList(dataBase.loadFromDB())
 
     }
-
 }

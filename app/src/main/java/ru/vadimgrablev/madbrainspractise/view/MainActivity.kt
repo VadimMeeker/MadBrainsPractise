@@ -46,6 +46,8 @@ class MainActivity : MainView, MvpAppCompatActivity() {
 
     }
 
+
+
     // Отправляю список в RecyclerView
     override fun setList(products: List<Product>) {
 
