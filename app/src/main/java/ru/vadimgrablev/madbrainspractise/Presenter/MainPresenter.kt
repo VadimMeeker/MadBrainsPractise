@@ -15,11 +15,15 @@ class MainPresenter : PresenterManager, MvpPresenter<MainView>() {
 
     override fun onCreate() {
 
+
         dataBase.loadFromDB().ifEmpty {
             networkService.sendRequestProductsToServer { dataBase.saveIntoDB(it) }
+
+            viewState.setList(dataBase.loadFromDB())
         }
 
         viewState.setList(dataBase.loadFromDB())
+
     }
 
 }

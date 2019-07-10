@@ -20,17 +20,16 @@ import ru.vadimgrablev.madbrainspractise.model.Product
             textView.text = product.name // загружаем текст в TextView
             countView.text = product.count.toString() // загружаем текст в CountView
 
+            // Открываю DetailAcitivity. На вход "context" и позиция элемента RecyclerView
             itemView.setOnClickListener {
-                openDetailActivity(itemView.context, product.name, product.price, product.count.toString())
+                openDetailActivity(itemView.context, layoutPosition)
             }
         }
 
-        fun openDetailActivity(context: Context, ProductName: String, ProductPrice: String, ProductCount: String) {
+        private fun openDetailActivity(context: Context, ProductPosition: Int) {
             // создаем объект Intent для запуска текущей Activity
             val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra("PRODUCT_NAME_TAG", ProductName)
-            intent.putExtra("PRODUCT_PRICE_TAG", ProductPrice)
-            intent.putExtra("PRODUCT_COUNT_TAG", ProductCount)
+            intent.putExtra("PRODUCT_POSITION_TAG", ProductPosition)
             // запускаем Activity
             context.startActivity(intent)
         }

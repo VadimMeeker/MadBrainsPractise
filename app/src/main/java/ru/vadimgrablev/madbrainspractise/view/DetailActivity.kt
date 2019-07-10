@@ -1,35 +1,45 @@
 package ru.vadimgrablev.madbrainspractise.view
 
 import android.os.Bundle
+import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import ru.vadimgrablev.madbrainspractise.R
-import kotlinx.android.synthetic.main.activity_detail.*
+import ru.vadimgrablev.madbrainspractise.model.DataBase
+import ru.vadimgrablev.madbrainspractise.model.DataBaseManager
 
 
 class DetailActivity : AppCompatActivity() {
+
+    private lateinit var viewPager: ViewPager
+    private lateinit var pagerAdapter: ProductsPagerAdapter
+
+    private var dataBase: DataBaseManager = DataBase()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        setText()
+        // Кнопка <- на ActionBar
+        assert(supportActionBar != null)   //null check
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)   //show back button
+
+        // Получаем список продуктов из Базы Данных
+        val products = dataBase.loadFromDB()
+
+        viewPager = findViewById(R.id.viewPager)
+
+        pagerAdapter = ProductsPagerAdapter(supportFragmentManager, products)
+        viewPager.adapter = pagerAdapter
+
+
+        viewPager.currentItem = intent?.extras?.getInt("PRODUCT_POSITION_TAG")!!.toInt()
 
     }
 
-    private fun setText(){
-
-        intent?.extras?.getString("PRODUCT_NAME_TAG").let{
-            nameViewId_second.text = "Наименование: " + it
-        }
-
-        intent?.extras?.getString("PRODUCT_PRICE_TAG").let{
-            priceViewId_second.text = "Цена: " + it + " рублей"
-        }
-
-        intent?.extras?.getString("PRODUCT_COUNT_TAG").let{
-            countViewId_second.text = "Количество: " + it + " шт."
-        }
-
+    // Функция для <- ActionBar
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
 }
