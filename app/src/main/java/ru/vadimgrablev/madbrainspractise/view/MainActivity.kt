@@ -42,11 +42,9 @@ class MainActivity : MainView, MvpAppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        recyclerViewId.layoutManager!!.onRestoreInstanceState(recylerViewState)
+        recyclerViewId.layoutManager?.onRestoreInstanceState(recylerViewState)
 
     }
-
-
 
     // Отправляю список в RecyclerView
     override fun setList(products: List<Product>) {

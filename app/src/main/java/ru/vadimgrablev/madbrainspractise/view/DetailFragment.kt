@@ -54,7 +54,6 @@ class DetailFragment : Fragment() {
         args.putString(KEY_COUNT, product.count.toString())
 
         // Создаем новый DetailFragment и отправляем Bundle как "arguments"
-        // to be retrieved and displayed when the view is created
         val fragment = DetailFragment()
         fragment.arguments = args
         return fragment
