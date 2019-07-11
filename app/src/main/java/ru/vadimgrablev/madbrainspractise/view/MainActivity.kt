@@ -42,7 +42,7 @@ class MainActivity : MainView, MvpAppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        recyclerViewId.layoutManager!!.onRestoreInstanceState(recylerViewState)
+        recyclerViewId.layoutManager?.onRestoreInstanceState(recylerViewState)
 
     }
 

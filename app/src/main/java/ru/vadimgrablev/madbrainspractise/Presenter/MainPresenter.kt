@@ -1,8 +1,12 @@
 package ru.vadimgrablev.madbrainspractise.presenter
 
+
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
-import ru.vadimgrablev.madbrainspractise.model.*
+import ru.vadimgrablev.madbrainspractise.model.DataBase
+import ru.vadimgrablev.madbrainspractise.model.DataBaseManager
+import ru.vadimgrablev.madbrainspractise.model.NetworkService
+import ru.vadimgrablev.madbrainspractise.model.NetworkServiceManager
 import ru.vadimgrablev.madbrainspractise.view.MainView
 
 // Аннотация для привязывания ViewState к Presenter
@@ -15,11 +19,16 @@ class MainPresenter : PresenterManager, MvpPresenter<MainView>() {
 
     override fun onCreate() {
 
-        dataBase.loadFromDB().ifEmpty {
-            networkService.sendRequestProductsToServer { dataBase.saveIntoDB(it) }
+        val listProduct = dataBase.loadFromDB()
+
+        if (listProduct.isEmpty()) {
+            networkService.sendRequestProductsToServer {
+                dataBase.saveIntoDB(it)
+                viewState.setList(it)
+            }
+        } else {
+            viewState.setList(listProduct)
         }
 
-        viewState.setList(dataBase.loadFromDB())
     }
-
 }
